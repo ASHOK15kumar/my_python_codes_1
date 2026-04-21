@@ -1,0 +1,680 @@
+
+| Type             | Example Function        | Key Use             |
+| ---------------- | ----------------------- | ------------------- |
+| Built-in         | `len(), max(), print()` | Ready-made          |
+| User-defined     | `def greet():`          | Custom logic        |
+| Lambda           | `lambda x: x*x`         | One-liners          |
+| Recursive        | Calls itself            | Loops via recursion |
+| Default args     | `def f(x=10)`           | Optional values     |
+| *args / **kwargs | `def f(*a, **b)`        | Multiple inputs     |
+
+
+**user-defined functions** in Python step by step with **syntax and examples** 👇
+
+**What is a User-Defined Function?**
+
+A **user-defined function** is a block of reusable code that you define yourself to perform a specific task.
+
+---
+**Syntax:**
+
+
+def function_name(parameters):
+    # function body
+    statement(s)
+    return value  # optional
+```
+
+**Explanation:**
+
+* `def` → Keyword used to define a function
+* `function_name` → Name of the function
+* `parameters` → Values passed into the function (optional)
+* `return` → Used to send a result back to the caller (optional)
+
+---
+
+✅ **Example 1: Function without parameters**
+
+
+def greet():
+    print("Hello, welcome to Python!")
+
+# function call
+greet()
+```
+
+**Output:**
+
+```
+Hello, welcome to Python!
+```
+
+---
+
+✅ **Example 2: Function with parameters**
+
+```python
+def add(a, b):
+    result = a + b
+    print("Sum:", result)
+
+# function call
+add(5, 10)
+```
+
+**Output:**
+
+Sum: 15
+```
+✅ **Example 3: Function with return value**
+
+```python
+def multiply(x, y):
+    return x * y
+
+product = multiply(4, 5)
+print("Product:", product)
+```
+
+**Output:**
+
+Product: 20
+```
+✅ **Example 4: Function with default argument**
+
+```python
+def greet(name="Ashok"):
+    print("Hello,", name)
+
+greet()
+greet("Rahul")
+```
+
+**Output:**
+
+Hello, Ashok
+Hello, Rahul
+```
+
+✅ **Example 5: Function returning multiple values**
+
+```python
+def calculate(a, b):
+    add = a + b
+    sub = a - b
+    return add, sub
+
+x, y = calculate(10, 5)
+print("Addition:", x)
+print("Subtraction:", y)
+```
+
+**Output:**
+
+Addition: 15
+Subtraction: 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Lambda Functions** in Python with syntax and examples 👇
+
+---
+⚡ **What is a Lambda Function?**
+
+A **lambda function** is a **small, anonymous (nameless)** function in Python.
+It’s mainly used for short, simple operations — often inside functions like `map()`, `filter()`, and `reduce()`.
+
+---
+
+### 🧩 **Syntax:**
+
+```python
+lambda arguments: expression
+```
+
+**Explanation:**
+
+* `lambda` → keyword used to define the anonymous function
+* `arguments` → input parameters (like function parameters)
+* `expression` → single line of code that gets evaluated and returned
+
+---
+
+### ✅ **Example 1: Simple addition**
+
+```python
+add = lambda a, b: a + b
+
+print("Sum:", add(5, 3))
+```
+
+**Output:**
+
+```
+Sum: 8
+```
+
+---
+
+### ✅ **Example 2: Square of a number**
+
+```python
+square = lambda x: x * x
+print("Square:", square(6))
+```
+
+**Output:**
+
+```
+Square: 36
+```
+
+---
+
+### ✅ **Example 3: Using lambda inside another function**
+
+```python
+def myfunc(n):
+    return lambda a: a * n
+
+doubler = myfunc(2)
+tripler = myfunc(3)
+
+print("Double of 5:", doubler(5))
+print("Triple of 5:", tripler(5))
+```
+
+**Output:**
+
+```
+Double of 5: 10
+Triple of 5: 15
+```
+
+---
+
+### ✅ **Example 4: Lambda with `map()`**
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x ** 2, numbers))
+print("Squares:", squares)
+```
+
+**Output:**
+
+```
+Squares: [1, 4, 9, 16, 25]
+```
+
+---
+
+### ✅ **Example 5: Lambda with `filter()`**
+
+```python
+numbers = [10, 15, 20, 25, 30]
+even = list(filter(lambda x: x % 2 == 0, numbers))
+print("Even numbers:", even)
+```
+
+**Output:**
+
+```
+Even numbers: [10, 20, 30]
+```
+
+---
+
+### ✅ **Example 6: Lambda with `reduce()`**
+
+```python
+from functools import reduce
+
+numbers = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, numbers)
+print("Product:", product)
+```
+
+**Output:**
+
+```
+Product: 120
+```
+
+---
+
+Would you like me to show a **mini program using lambda (like sorting students by marks or filtering odd numbers)**?
+
+
+
+
+
+
+
+
+
+Of course, bhaiii 😎🔥
+
+Let’s go over **Recursive Functions** in Python — with **syntax, explanation, and examples** 👇
+
+---
+
+🧠 **What is a Recursive Function?**
+
+A **recursive function** is a function that **calls itself** to solve smaller parts of a bigger problem.
+It must have a **base condition** to stop recursion — otherwise, it will run infinitely.
+
+---
+
+### 🧩 **Syntax:**
+
+```python
+def function_name(parameters):
+    if condition:       # base condition
+        return value
+    else:
+        return function_name(modified_parameters)
+```
+
+**Explanation:**
+
+* `function_name()` → function that calls itself
+* **Base condition** → stops the recursion
+* **Recursive case** → function keeps calling itself with a smaller input
+
+---
+
+## ✅ **Example 1: Factorial using recursion**
+
+```python
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print("Factorial of 5 is:", factorial(5))
+```
+
+**Output:**
+
+```
+Factorial of 5 is: 120
+```
+
+🧩 **Explanation:**
+
+```
+factorial(5)
+= 5 * factorial(4)
+= 5 * 4 * factorial(3)
+= 5 * 4 * 3 * factorial(2)
+= 5 * 4 * 3 * 2 * factorial(1)
+= 5 * 4 * 3 * 2 * 1 = 120
+```
+
+---
+
+## ✅ **Example 2: Fibonacci series using recursion**
+
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+for i in range(6):
+    print(fibonacci(i), end=" ")
+```
+
+**Output:**
+
+```
+0 1 1 2 3 5
+```
+
+---
+
+## ✅ **Example 3: Sum of natural numbers**
+
+```python
+def sum_natural(n):
+    if n == 0:
+        return 0
+    else:
+        return n + sum_natural(n - 1)
+
+print("Sum of first 5 numbers:", sum_natural(5))
+```
+
+**Output:**
+
+```
+Sum of first 5 numbers: 15
+```
+
+---
+
+## ✅ **Example 4: Reverse a string using recursion**
+
+```python
+def reverse_string(s):
+    if len(s) == 0:
+        return s
+    else:
+        return reverse_string(s[1:]) + s[0]
+
+print(reverse_string("ashok"))
+```
+
+**Output:**
+
+```
+kohsa
+```
+
+---
+
+## ✅ **Example 5: Find power of a number (xⁿ)**
+
+```python
+def power(x, n):
+    if n == 0:
+        return 1
+    else:
+        return x * power(x, n - 1)
+
+print("2^5 =", power(2, 5))
+```
+
+**Output:**
+
+```
+2^5 = 32
+```
+
+
+
+
+
+
+ 
+**Default Arguments** in Python — with full explanation, syntax, and examples 👇
+
+---
+
+## 🧠 **What are Default Arguments?**
+
+👉 **Default arguments** are function parameters that have a **predefined (default) value**.
+If you don’t pass a value for that parameter, Python automatically uses the default one.
+
+---
+
+**Syntax:**
+
+```python
+def function_name(arg1, arg2=value):
+    # function body
+    statement(s)
+```
+
+**Explanation:**
+
+* `arg1` → normal argument (must be provided)
+* `arg2=value` → default argument (optional)
+* Default arguments must **come after** non-default ones
+
+---
+
+## ✅ **Example 1: Basic example**
+
+```python
+def greet(name="Ashok"):
+    print("Hello,", name)
+
+greet()           # uses default value
+greet("Rahul")    # overrides default
+```
+
+**Output:**
+
+```
+Hello, Ashok
+Hello, Rahul
+```
+
+---
+
+## ✅ **Example 2: Function with multiple default arguments**
+
+```python
+def display_info(name, course="Python", duration="3 months"):
+    print("Name:", name)
+    print("Course:", course)
+    print("Duration:", duration)
+
+display_info("Ashok")
+display_info("Kumar", "Full Stack", "6 months")
+```
+
+**Output:**
+
+```
+Name: Ashok
+Course: Python
+Duration: 3 months
+
+Name: Kumar
+Course: Full Stack
+Duration: 6 months
+```
+
+---
+
+## ✅ **Example 3: Mixing positional and default arguments**
+
+```python
+def add(a, b=10):
+    return a + b
+
+print(add(5))      # b takes default 10
+print(add(5, 20))  # b = 20 overrides default
+```
+
+**Output:**
+
+```
+15
+25
+```
+
+---
+
+✅ **Example 4: Default arguments in loops or calculations**
+
+```python
+def table(num=5):
+    for i in range(1, 6):
+        print(num, "x", i, "=", num * i)
+
+table()     # uses default 5
+table(3)    # uses 3
+```
+
+**Output:**
+
+```
+5 x 1 = 5
+5 x 2 = 10
+...
+3 x 5 = 15
+```
+
+---
+
+## ⚠️ **Important Rule:**
+
+👉 Default arguments must always be **placed after** non-default ones.
+
+❌ Wrong:
+
+```python
+def func(a=5, b):
+    print(a, b)
+```
+
+✅ Correct:
+
+```python
+def func(a, b=5):
+    print(a, b)
+```
+
+
+
+
+
+
+
+let’s dive into the **legendary combo:** `*args` and `**kwargs` in Python!
+
+These are super useful when you **don’t know beforehand how many arguments** will be passed to your function.
+
+---
+
+## 🧠 **What are `*args` and `**kwargs`?**
+
+| Name       | Meaning                        | Used for                                       |
+| ---------- | ------------------------------ | ---------------------------------------------- |
+| `*args`    | Non-keyword variable arguments | Passing multiple positional arguments          |
+| `**kwargs` | Keyword variable arguments     | Passing multiple keyword (key=value) arguments |
+
+---
+
+## 🧩 **Syntax:**
+
+```python
+def function_name(*args, **kwargs):
+    # function body
+```
+
+---
+
+## ✅ **Example 1: Using `*args` (positional arguments)**
+
+```python
+def add_numbers(*args):
+    total = 0
+    for num in args:
+        total += num
+    print("Sum:", total)
+
+add_numbers(10, 20)
+add_numbers(5, 10, 15, 20)
+```
+
+**Output:**
+
+```
+Sum: 30
+Sum: 50
+```
+
+🧠 Here,
+
+* `args` is a **tuple** containing all the positional arguments.
+* You can pass any number of values.
+
+---
+
+## ✅ **Example 2: Using `**kwargs` (keyword arguments)**
+
+```python
+def student_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} : {value}")
+
+student_info(name="Ashok", age=21, course="Python Full Stack")
+```
+
+**Output:**
+
+```
+name : Ashok
+age : 21
+course : Python Full Stack
+```
+
+🧠 Here,
+
+* `kwargs` is a **dictionary** containing all keyword arguments.
+* Each key=value pair becomes one dictionary entry.
+
+---
+
+## ✅ **Example 3: Combining `*args` and `**kwargs`**
+
+```python
+def show_details(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+
+show_details(10, 20, 30, name="Ashok", course="Python")
+```
+
+**Output:**
+
+```
+Positional arguments: (10, 20, 30)
+Keyword arguments: {'name': 'Ashok', 'course': 'Python'}
+```
+
+---
+
+## ✅ **Example 4: Using `*args` and `**kwargs` in real function**
+
+```python
+def order_summary(customer, *items, **details):
+    print("Customer:", customer)
+    print("Items Ordered:", items)
+    print("Order Details:", details)
+
+order_summary("Ashok", "Burger", "Fries", "Coke", location="Bengaluru", payment="UPI")
+```
+
+**Output:**
+
+```
+Customer: Ashok
+Items Ordered: ('Burger', 'Fries', 'Coke')
+Order Details: {'location': 'Bengaluru', 'payment': 'UPI'}
+```
+
+---
+
+⚡ **Key Points to Remember:**
+
+1. `*args` → for **any number of positional** arguments (stored as a tuple).
+2. `**kwargs` → for **any number of keyword** arguments (stored as a dictionary).
+3. Order of parameters should always be:
+
+   ```
+   def func(normal, *args, **kwargs):
+       ...
+   ```
