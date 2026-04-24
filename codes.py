@@ -116,18 +116,18 @@
 #         print("its a prime")
         
 
-num=int(input('enter num: '))
-if num<1:
-    print("enter a valid num")
-elif num<2:
-    print('its not a prime')
-else:
-    for i in range(2,num):
-        if num%i==0:
-            print('not prime')
-            break
-    else:
-        print("its a prime")
+# num=int(input('enter num: '))
+# if num<1:
+#     print("enter a valid num")
+# elif num<2:
+#     print('its not a prime')
+# else:
+#     for i in range(2,num):
+#         if num%i==0:
+#             print('not prime')
+#             break
+#     else:
+#         print("its a prime")
 
 
 # def prime(val):
@@ -142,3 +142,49 @@ else:
 #         print('enter valid num')
 # userinput=int(input('enter a num: '))
 # prime(userinput)
+
+
+'''------------------------ simple interest -------------------'''
+
+# A=int(input('enter your money: '))
+# B=int(input('enter interest_percentage rate per year: '))
+# C=int(input('enter C in years: '))
+# interest=A*(B/100)*C # or A*B*C/100    # because 5*10/100*20 =  5/1*10/100*20/1   think about this line for better understanding
+# print(f'simple interest {interest}')
+# print(f'your money with simple interest is: {interest}')
+
+
+# print((5*10*20/100)==5*(10/100)*20)
+
+'''------------------------ compound interest -------------------'''
+
+# import time
+# start = time.perf_counter() 
+# # WAP to calculate COMPOUND interest of 1000 for 2years with 10% interest rate   (EXAMPLE QUESTION)
+# def compound_interest(A,B,C):
+#     num=1
+#     C_interest=(A*(B/100)*1)
+#     for i in range (C-1):
+#         C_interest+=(A*(B/100))+(C_interest*(B/100))
+#         num+=1
+#     return (f'coumpound interest per {C} years is {C_interest}') 
+
+# A=int(input('enter your money: '))
+# B=int(input('enter interest_percentage rate per year: '))
+# C=int(input('enter for years: '))
+# print(compound_interest(A,B,C))
+
+# end = time.perf_counter() 
+# print("\nRuntime:", end - start, "seconds")
+
+
+'''----------------------list comprehension----------------------------'''
+
+# squares = [i ** 2 for i in range(10)]
+# print("Squares:", squares)
+
+'''------------------multiplication table------------------------------'''
+val=int(input('enter num: '))
+for i in range(1,11):
+    res=val*i
+    print(f"{val}*{i}={res}")
