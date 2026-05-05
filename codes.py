@@ -443,9 +443,121 @@
 # k=[12,122,4,43,532]
 # k.sort()
 # print(k)
+'''---------------------------------palindrome--------------------------------------'''
+# ----normal approach-------------
+# def palindrome(stringu):
+#     if stringu == stringu[::-1]:
+#         return 'yes'
+# k=str(input('enter string:')) 
+# print(palindrome(k))
 
-def palindrome(stringu):
-    if stringu == stringu[::-1]:
-        return 'yes'
-k=str(input('enter string:')) 
-print(palindrome(k))
+# def palin(value):
+#     val=value.replace(" ","")
+#     if val==val[::-1]:
+#         return 'True'
+#     else:
+#         return 'False'
+# k=str(input('value: '))
+# print(palin(k))
+
+# ---------the best approaches--------------
+
+# def palin(s):
+#     s = s.replace(" ", "").lower()  # note spaces shoul not count in palindrome string   (h ell o = he llo)
+#     return s == s[::-1]
+# value=str(input('enter a value: '))
+# if palin:
+#     print('its a palindrome string')
+# else:
+#     print('its a palindrome string')
+
+# -----sometime they ask like ignore special characters and numerics-----
+
+# def is_palindrome(s):
+#     cleaned = ""
+
+#     for ch in s:
+#         if ch.isalpha():     # keep only letters
+#             cleaned += ch.lower()
+
+#     return cleaned == cleaned[::-1]
+
+# -----sometime they ask like ignore special characters only and check -----
+
+# def is_palindrome(s):
+#     cleaned = ""
+
+#     for ch in s:
+#         if ch.isalnum():   # letters + numbers only
+#             cleaned += ch.lower()
+
+#     return cleaned == cleaned[::-1]
+
+
+# --------------------------    (or)---
+
+# def is_palindrome(s):
+#     cleaned = ""
+
+#     for ch in s:
+#         if ch.isalnum():   # keeps letters + numbers, removes special chars
+#             cleaned += ch.lower()
+
+#     return cleaned == cleaned[::-1]
+
+'''------------------frequency of each character in a string-----------'''
+
+# def char_frequency(s):
+#     freq = {}
+    
+#     for ch in s:
+#         if ch in freq:
+#             freq[ch] += 1
+#         else:
+#             freq[ch] = 1
+    
+#     return freq
+
+'''-------------------------------------------reverse a string withot slicing--------------------'''
+
+# def reverse_string(s):
+#     rev = ""
+#     for ch in s:
+#         rev = ch + rev
+#     return rev
+
+# print(reverse_string('akhf'))
+
+'''---------------------------------------------------reverese a number----------------------'''
+# def sum_of(digits):
+#     sum=0
+#     while digits>0:
+#         sum += digits %  10
+#         digits = digits // 10
+#     return sum
+# print(sum_of(1234))
+        
+
+'''-----------------------------vowels cout------------------------------'''
+# def vowels_count(word):
+#     cnt=0
+#     for i in range (len(word)):
+#         if word[i] in 'aeiouAeiou':
+#             cnt+=1
+#     return cnt
+# val=str(input('enter a string: '))
+# print(vowels_count(val))
+
+'''# -----------------                doubt  ------------------'''
+
+# def rm_dupli(dupli):
+#     res=set(dupli)
+#     lis=list(res)
+#     return lis
+# val = list(map(int, input("Enter numbers: ").split(",")))
+# print(rm_dupli(val))
+
+
+
+
+    
